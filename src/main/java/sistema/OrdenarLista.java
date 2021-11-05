@@ -13,11 +13,11 @@ public class OrdenarLista implements Comparator<Producto> {
 	}
 
 	private int compararGusto(Producto o1, Producto o2) {
-		if (this.gustoDelUsuario.equals(o1.getTipoDeProducto())
-				&& (!this.gustoDelUsuario.equals(o2.getTipoDeProducto())))
+		if (this.gustoDelUsuario.equalsIgnoreCase(o1.getTipoDeProducto())
+				&& (!this.gustoDelUsuario.equalsIgnoreCase(o2.getTipoDeProducto())))
 			return -1;
-		if (!this.gustoDelUsuario.equals(o1.getTipoDeProducto())
-				&& (this.gustoDelUsuario.equals(o2.getTipoDeProducto())))
+		if (!this.gustoDelUsuario.equalsIgnoreCase(o1.getTipoDeProducto())
+				&& (this.gustoDelUsuario.equalsIgnoreCase(o2.getTipoDeProducto())))
 			return 1;
 
 		return 0;

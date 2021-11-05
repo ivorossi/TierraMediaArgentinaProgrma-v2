@@ -41,7 +41,7 @@ public  class Atraccion extends Producto {
 	}
 
 	public boolean verificaCompra(Producto haComprar) {
-		return this.equals(haComprar);
+		return super.equals(haComprar);
 	}
 
 

@@ -24,7 +24,7 @@ public class Itinerario {
 		this.productosDelusuario.add(productoDelusuario);
 	}
 
-	public boolean noEstaComprado(Producto haComprar) {
+	public boolean estaComprado(Producto haComprar) {
 		
 		for (Producto yaComprados : productosDelusuario) {
 			
@@ -34,10 +34,9 @@ public class Itinerario {
 					if(haComprar.verificaCompra(elemento))
 						return true;
 				}
-			}else{
-				 if(haComprar.verificaCompra(yaComprados));
-					return true;
-			}
+			}else if( haComprar.verificaCompra(yaComprados))
+				 	return true;
+			
 		}
 		return false;
 	}

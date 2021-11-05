@@ -23,6 +23,7 @@ public class TierraMedia {
 		AtraccionDAOImpl coneccionAtraccion = new AtraccionDAOImpl();
 		PromocionDAOImpl coneccionPromocion = new PromocionDAOImpl();
 		UsuarioDAOImpl coneccionUsuario = new UsuarioDAOImpl();
+
 		
 		Scanner teclado = new Scanner(System.in);
 		String asd;
@@ -32,10 +33,14 @@ public class TierraMedia {
 		System.out.println("-----------------------------------------");
 		listaDePromos = coneccionPromocion.dameTodos();
 		System.out.println("-----------------------------------------");
-
+for(Atraccion elemento : atracciones) {
+	System.out.println(elemento.getNombreDeProducto());
+	System.out.println(elemento.getCupo());
+	
+}
+		
 		productosOfertables.addAll(atracciones);
 		productosOfertables.addAll(listaDePromos);
-		System.out.println(productosOfertables);
 		for(Usuario visitante: colaDeVisitantes) {
 			
 			OrdenarLista ordenarOfertables = new OrdenarLista(visitante);
@@ -43,7 +48,6 @@ public class TierraMedia {
 
 			System.out.println("\n-----------------------------------------------------------------------------\n"
 					+ "Bienvenido/a a la tierra media: " + visitante.getNombre() + "\nVamos a Comprar");
-
 			for (Producto elemento : productosOfertables) {
 
 				if (visitante.loPuedoComprar(elemento)) {

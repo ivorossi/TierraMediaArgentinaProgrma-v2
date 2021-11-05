@@ -35,10 +35,6 @@ public class Usuario {
 		itinerarioDelUsuario.setProducto(compra);
 	}
 
-	public boolean loTengo(Producto compra) {
-		return this.itinerarioDelUsuario.noEstaComprado(compra);
-	}
-
 	public String getNombre() {
 		return nombreCompleto;
 	}
@@ -73,9 +69,10 @@ public class Usuario {
 	}
 	
 	public boolean loPuedoComprar(Producto haComprar) {
+		
 		return (this.getTiempoDisponible() >= haComprar.getTimepoDeProducto()
 				&& this.getPresupuesto() >= haComprar.getCostoTotal() && haComprar.hayCupo()
-				&& !this.loTengo(haComprar));
+				&& !this.itinerarioDelUsuario.estaComprado(haComprar));
 	}
 	
 

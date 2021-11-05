@@ -80,7 +80,7 @@ public class AtraccionDAOImpl extends GenericDAO<Atraccion> {
 	protected Atraccion convertirT(ResultSet resultados) throws SQLException {
 		try {
 			return new Atraccion(resultados.getInt(1), resultados.getString(2), resultados.getString(3),
-					resultados.getInt(4), resultados.getDouble(5), resultados.getInt(6));
+					resultados.getInt(4), resultados.getDouble(6), resultados.getInt(5));
 		} catch (ExcepcionDeProducto e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
